@@ -36,7 +36,7 @@ export class AssignmentTexter extends React.Component {
     };
   }
 
-  componentWillMount() {
+  UNSAFE_componentWillMount() {
     this.updateCurrentContactIndex(0);
   }
 

@@ -1,33 +1,63 @@
 import { IndexRoute, IndexRedirect, Route } from "react-router";
-import App from "./components/App";
-import AdminDashboard from "./components/AdminDashboard";
-import AdminCampaignList from "./containers/AdminCampaignList";
-import AdminCampaignStats from "./containers/AdminCampaignStats";
-import AdminPersonList from "./containers/AdminPersonList";
-import AdminOptOutList from "./containers/AdminOptOutList";
-import AdminIncomingMessageList from "./containers/AdminIncomingMessageList";
-import AdminCampaignEdit from "./containers/AdminCampaignEdit";
-import AdminReplySender from "./containers/AdminReplySender";
-import TexterDashboard from "./components/TexterDashboard";
-import TopNav from "./components/TopNav";
-import DashboardLoader from "./containers/DashboardLoader";
-import TexterTodoList from "./containers/TexterTodoList";
-import TexterTodo from "./containers/TexterTodo";
-import Login from "./components/Login";
-import Terms from "./containers/Terms";
 import React from "react";
-import CreateOrganization from "./containers/CreateOrganization";
-import JoinTeam from "./containers/JoinTeam";
-import Home from "./containers/Home";
-import Settings from "./containers/Settings";
-import UserEdit from "./containers/UserEdit";
-import TexterFaqs from "./components/TexterFrequentlyAskedQuestions";
-import FAQs from "./lib/faqs";
-import {
-  DemoTexterNeedsMessage,
-  DemoTexterNeedsResponse,
-  DemoTexterNeedsResponse2ndQuestion
-} from "./components/DemoTexterAssignment";
+
+const App = React.lazy(() => import("./components/App"));
+const AdminDashboard = React.lazy(() => import("./components/AdminDashboard"));
+const AdminCampaignList = React.lazy(() =>
+  import("./containers/AdminCampaignList")
+);
+const AdminCampaignStats = React.lazy(() =>
+  import("./containers/AdminCampaignStats")
+);
+const AdminPersonList = React.lazy(() =>
+  import("./containers/AdminPersonList")
+);
+const AdminOptOutList = React.lazy(() =>
+  import("./containers/AdminOptOutList")
+);
+const AdminIncomingMessageList = React.lazy(() =>
+  import("./containers/AdminIncomingMessageList")
+);
+const AdminCampaignEdit = React.lazy(() =>
+  import("./containers/AdminCampaignEdit")
+);
+const AdminReplySender = React.lazy(() =>
+  import("./containers/AdminReplySender")
+);
+const TexterDashboard = React.lazy(() =>
+  import("./components/TexterDashboard")
+);
+const TopNav = React.lazy(() => import("./components/TopNav"));
+const DashboardLoader = React.lazy(() =>
+  import("./containers/DashboardLoader")
+);
+const TexterTodoList = React.lazy(() => import("./containers/TexterTodoList"));
+const TexterTodo = React.lazy(() => import("./containers/TexterTodo"));
+const Login = React.lazy(() => import("./components/Login"));
+const Terms = React.lazy(() => import("./containers/Terms"));
+const CreateOrganization = React.lazy(() =>
+  import("./containers/CreateOrganization")
+);
+const JoinTeam = React.lazy(() => import("./containers/JoinTeam"));
+const Home = React.lazy(() => import("./containers/Home"));
+const Settings = React.lazy(() => import("./containers/Settings"));
+const UserEdit = React.lazy(() => import("./containers/UserEdit"));
+const TexterFaqs = React.lazy(() =>
+  import("./components/TexterFrequentlyAskedQuestions")
+);
+const FAQs = React.lazy(() => import("./lib/faqs"));
+
+const DemoTexterNeedsMessage = React.lazy(
+  () => import("./components/DemoTexterAssignment").DemoTexterNeedsMessage
+);
+const DemoTexterNeedsResponse = React.lazy(
+  () => import("./components/DemoTexterAssignment").DemoTexterNeedsResponse
+);
+const DemoTexterNeedsResponse2ndQuestion = React.lazy(
+  () =>
+    import("./components/DemoTexterAssignment")
+      .DemoTexterNeedsResponse2ndQuestion
+);
 
 export default function makeRoutes(requireAuth = () => {}) {
   return (

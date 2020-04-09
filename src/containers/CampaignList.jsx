@@ -56,7 +56,7 @@ export class CampaignList extends React.Component {
       return (
         <IconButton
           tooltip="Unarchive"
-          onTouchTap={async () =>
+          onClick={async () =>
             await this.props.mutations.unarchiveCampaign(campaign.id)
           }
         >
@@ -67,7 +67,7 @@ export class CampaignList extends React.Component {
     return (
       <IconButton
         tooltip="Archive"
-        onTouchTap={async () =>
+        onClick={async () =>
           await this.props.mutations.archiveCampaign(campaign.id)
         }
       >
@@ -151,7 +151,7 @@ export class CampaignList extends React.Component {
         style={listItemStyle}
         key={campaign.id}
         primaryText={primaryText}
-        onTouchTap={({
+        onClick={({
           currentTarget: {
             firstElementChild: {
               firstElementChild: { checked }

@@ -141,7 +141,7 @@ class AssignmentTexterSurveys extends Component {
         {step.question.answerOptions.map((answerOption, index) => (
           <ListItem
             value={answerOption.value}
-            onTouchTap={() => {
+            onClick={() => {
               this.handleSelectChange(step, index, answerOption.value);
               this.props.onRequestClose();
             }}

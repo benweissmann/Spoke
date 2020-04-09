@@ -1,3 +1,5 @@
+import "../lib/backcompat";
+
 import "babel-polyfill";
 import bodyParser from "body-parser";
 import express from "express";

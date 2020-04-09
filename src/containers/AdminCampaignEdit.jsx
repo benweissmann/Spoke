@@ -102,7 +102,7 @@ class AdminCampaignEdit extends React.Component {
     };
   }
 
-  componentWillReceiveProps(newProps) {
+  UNSAFE_componentWillReceiveProps(newProps) {
     // This should only update the campaignFormValues sections that
     // are NOT expanded so the form data doesn't compete with the user
     // The basic flow of data:
@@ -569,7 +569,7 @@ class AdminCampaignEdit extends React.Component {
           {this.props.campaignData.campaign.isArchived ? (
             <RaisedButton
               label="Unarchive"
-              onTouchTap={async () =>
+              onClick={async () =>
                 await this.props.mutations.unarchiveCampaign(
                   this.props.campaignData.campaign.id
                 )
@@ -578,7 +578,7 @@ class AdminCampaignEdit extends React.Component {
           ) : (
             <RaisedButton
               label="Archive"
-              onTouchTap={async () =>
+              onClick={async () =>
                 await this.props.mutations.archiveCampaign(
                   this.props.campaignData.campaign.id
                 )
@@ -590,7 +590,7 @@ class AdminCampaignEdit extends React.Component {
             primary
             label="Start This Campaign!"
             disabled={!isCompleted}
-            onTouchTap={async () => {
+            onClick={async () => {
               this.setState({
                 startingCampaign: true
               });
@@ -700,7 +700,7 @@ class AdminCampaignEdit extends React.Component {
                   <RaisedButton
                     label="Discard Job"
                     icon={<CancelIcon />}
-                    onTouchTap={() => this.handleDeleteJob(jobId)}
+                    onClick={() => this.handleDeleteJob(jobId)}
                   />
                 </CardActions>
               ) : null}

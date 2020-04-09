@@ -37,7 +37,7 @@ function Chip({
   style = {}
 }) {
   return (
-    <div style={_.extend({}, styles.chip, style)} onTouchTap={onTouchTap}>
+    <div style={_.extend({}, styles.chip, style)} onClick={onTouchTap}>
       {text}
       {iconRightClass
         ? React.createElement(iconRightClass, {

@@ -111,7 +111,7 @@ export class TexterTodo extends React.Component {
     this.loadContacts = this.loadContacts.bind(this);
   }
 
-  componentWillMount() {
+  UNSAFE_componentWillMount() {
     const { assignment } = this.props.data;
     this.assignContactsIfNeeded();
     if (!assignment || assignment.campaign.isArchived) {

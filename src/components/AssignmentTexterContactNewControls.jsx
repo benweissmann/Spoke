@@ -452,7 +452,7 @@ export class AssignmentTexterContactControls extends React.Component {
     if (messageStatus === "closed") {
       button = (
         <FlatButton
-          onTouchTap={() => this.props.onEditStatus("needsResponse")}
+          onClick={() => this.props.onEditStatus("needsResponse")}
           label="Reopen"
           className={css(flexStyles.flatButton)}
           labelStyle={inlineStyles.flatButtonLabel}
@@ -462,7 +462,7 @@ export class AssignmentTexterContactControls extends React.Component {
     } else {
       button = (
         <FlatButton
-          onTouchTap={() => this.props.onEditStatus("closed", true)}
+          onClick={() => this.props.onEditStatus("closed", true)}
           label="Skip"
           className={css(flexStyles.flatButton)}
           labelStyle={inlineStyles.flatButtonLabel}
@@ -537,7 +537,7 @@ export class AssignmentTexterContactControls extends React.Component {
                       : "white"
                 }}
                 label="Standard Message"
-                onTouchTap={() => {
+                onClick={() => {
                   this.setState({
                     optOutMessageText: this.props.campaign.organization
                       .optOutMessage
@@ -555,7 +555,7 @@ export class AssignmentTexterContactControls extends React.Component {
                     this.state.optOutMessageText === "" ? "#727272" : "white"
                 }}
                 label="No Message"
-                onTouchTap={() => {
+                onClick={() => {
                   this.setState({ optOutMessageText: "" });
                 }}
               />
@@ -572,7 +572,7 @@ export class AssignmentTexterContactControls extends React.Component {
                 labelStyle={inlineStyles.flatButtonLabel}
                 style={inlineStyles.inlineBlock}
                 label="Cancel"
-                onTouchTap={this.handleCloseDialog}
+                onClick={this.handleCloseDialog}
               />
               <FlatButton
                 type="submit"
@@ -695,7 +695,7 @@ export class AssignmentTexterContactControls extends React.Component {
                     </span>
                   </span>
                 }
-                onTouchTap={this.handleOpenAnswerPopover}
+                onClick={this.handleOpenAnswerPopover}
                 className={css(flexStyles.flatButton)}
                 labelStyle={inlineStyles.flatButtonLabel}
                 backgroundColor={
@@ -717,7 +717,7 @@ export class AssignmentTexterContactControls extends React.Component {
                     <FlatButton
                       key={`shortcut_${opt.answer.value}`}
                       label={opt.label}
-                      onTouchTap={evt => {
+                      onClick={evt => {
                         this.handleQuestionResponseChange({
                           interactionStep: currentInteractionStep,
                           questionResponseValue: opt.answer.value,
@@ -757,7 +757,7 @@ export class AssignmentTexterContactControls extends React.Component {
             >
               <FlatButton
                 label="Other Responses"
-                onTouchTap={this.handleOpenResponsePopover}
+                onClick={this.handleOpenResponsePopover}
                 className={css(flexStyles.flatButton)}
                 labelStyle={inlineStyles.flatButtonLabel}
                 backgroundColor="white"
@@ -766,7 +766,7 @@ export class AssignmentTexterContactControls extends React.Component {
           </div>
           <div className={css(flexStyles.subButtonsExitButtons)}>
             <FlatButton
-              onTouchTap={this.props.navigationToolbarChildren.onPrevious}
+              onClick={this.props.navigationToolbarChildren.onPrevious}
               disabled={!this.props.navigationToolbarChildren.onPrevious}
               tooltip="Previous Contact"
               tooltipPosition="button-center"
@@ -786,7 +786,7 @@ export class AssignmentTexterContactControls extends React.Component {
               {...dataTest("optOut")}
               secondary
               label="Opt-out"
-              onTouchTap={this.handleOpenDialog}
+              onClick={this.handleOpenDialog}
               tooltip="Opt out this contact"
               className={css(flexStyles.flatButton)}
               labelStyle={inlineStyles.flatButtonLabel}
@@ -794,7 +794,7 @@ export class AssignmentTexterContactControls extends React.Component {
             />
 
             <FlatButton
-              onTouchTap={this.props.navigationToolbarChildren.onNext}
+              onClick={this.props.navigationToolbarChildren.onNext}
               disabled={!this.props.navigationToolbarChildren.onNext}
               tooltip="Next Contact"
               tooltipPosition="bottom-center"
@@ -817,7 +817,7 @@ export class AssignmentTexterContactControls extends React.Component {
       >
         <FlatButton
           {...dataTest("send")}
-          onTouchTap={this.handleClickSendMessageButton}
+          onClick={this.handleClickSendMessageButton}
           disabled={this.props.disabled}
           label={<span>&crarr; Send</span>}
           className={`${css(flexStyles.flatButton)} ${css(
@@ -845,7 +845,7 @@ export class AssignmentTexterContactControls extends React.Component {
             navigationToolbarChildren={this.props.navigationToolbarChildren}
             leftToolbarIcon={
               <IconButton
-                onTouchTap={this.props.onExitTexter}
+                onClick={this.props.onExitTexter}
                 style={inlineStyles.exitTexterIconButton}
                 tooltip="Return Home"
                 tooltipPosition="bottom-center"

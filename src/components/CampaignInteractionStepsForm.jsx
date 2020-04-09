@@ -183,7 +183,7 @@ export default class CampaignInteractionStepsForm extends React.Component {
               {interactionStep.parentInteractionId ? (
                 <DeleteIcon
                   style={styles.pullRight}
-                  onTouchTap={this.deleteStep(interactionStep.id).bind(this)}
+                  onClick={this.deleteStep(interactionStep.id).bind(this)}
                 />
               ) : (
                 ""
@@ -247,7 +247,7 @@ export default class CampaignInteractionStepsForm extends React.Component {
               <RaisedButton
                 {...dataTest("addResponse")}
                 label="+ Add a response"
-                onTouchTap={this.addStep(interactionStep.id).bind(this)}
+                onClick={this.addStep(interactionStep.id).bind(this)}
                 style={{ marginBottom: "10px" }}
               />
             </div>
@@ -284,7 +284,7 @@ export default class CampaignInteractionStepsForm extends React.Component {
           {...dataTest("interactionSubmit")}
           primary
           label={this.props.saveLabel}
-          onTouchTap={this.onSave.bind(this)}
+          onClick={this.onSave.bind(this)}
         />
       </div>
     );

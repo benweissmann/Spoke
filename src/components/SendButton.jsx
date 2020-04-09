@@ -9,7 +9,7 @@ import { dataTest } from "../lib/attributes";
 const styles = StyleSheet.create({
   container: {
     display: "inline-block",
-    marginLeft: 24,
+    marginLeft: 24
   }
 });
 class SendButton extends Component {
@@ -40,7 +40,7 @@ class SendButton extends Component {
       <div className={css(styles.container)}>
         <RaisedButton
           {...dataTest("send")}
-          onTouchTap={this.handleTouchTap}
+          onClick={this.handleTouchTap}
           disabled={this.props.disabled}
           label={this.clickStepLabels()[this.state.clickStepIndex]}
           primary

@@ -419,7 +419,7 @@ export default class CampaignTextersForm extends React.Component {
           )}
           <div className={css(styles.removeButton)}>
             <IconButton
-              onTouchTap={async () => {
+              onClick={async () => {
                 const currentFormValues = this.formValues();
                 const newFormValues = {
                   ...currentFormValues
@@ -499,7 +499,7 @@ export default class CampaignTextersForm extends React.Component {
               <RaisedButton
                 {...dataTest("addAll")}
                 label="Add All"
-                onTouchTap={() => this.addAllTexters()}
+                onClick={() => this.addAllTexters()}
               />
             </div>
           </div>

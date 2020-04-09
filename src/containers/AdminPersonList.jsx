@@ -206,14 +206,14 @@ class AdminPersonList extends React.Component {
                 <FlatButton
                   {...dataTest("editPerson")}
                   label="Edit"
-                  onTouchTap={() => {
+                  onClick={() => {
                     this.editUser(person.id);
                   }}
                 />
                 <FlatButton
                   label="Reset Password"
                   disabled={currentUser.id === person.id}
-                  onTouchTap={() => {
+                  onClick={() => {
                     this.resetPassword(person.id);
                   }}
                 />
@@ -248,7 +248,7 @@ class AdminPersonList extends React.Component {
         <FloatingActionButton
           {...dataTest("addPerson")}
           style={theme.components.floatingButton}
-          onTouchTap={this.handleOpen}
+          onClick={this.handleOpen}
         >
           <ContentAdd />
         </FloatingActionButton>
@@ -279,7 +279,7 @@ class AdminPersonList extends React.Component {
                   {...dataTest("inviteOk")}
                   label="OK"
                   primary
-                  onTouchTap={this.handleClose}
+                  onClick={this.handleClose}
                 />
               ]}
               modal={false}
@@ -297,7 +297,7 @@ class AdminPersonList extends React.Component {
                   {...dataTest("passResetOK")}
                   label="OK"
                   primary
-                  onTouchTap={this.handleClose}
+                  onClick={this.handleClose}
                 />
               ]}
               modal={false}

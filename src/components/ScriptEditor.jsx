@@ -97,12 +97,16 @@ class ScriptEditor extends React.Component {
     }, 200);
   }
 
-  componentWillReceiveProps() {
+  UNSAFE_componentWillReceiveProps() {
     const { scriptFields } = this.props;
     const { editorState } = this.state;
     const decorator = this.getCompositeDecorator(scriptFields);
     EditorState.set(editorState, { decorator });
     // this.setState({ editorState: this.getEditorState() })
+  }
+
+  componentDidMount() {
+    this.focus();
   }
 
   onChange(editorState) {
@@ -186,7 +190,7 @@ class ScriptEditor extends React.Component {
           <Chip
             style={styles.scriptFieldButton}
             text={delimit(field)}
-            onTouchTap={() => this.addCustomField(field)}
+            onClick={() => this.addCustomField(field)}
           />
         ))}
       </div>

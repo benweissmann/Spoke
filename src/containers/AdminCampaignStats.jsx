@@ -139,7 +139,7 @@ class AdminCampaignStats extends React.Component {
     return (
       <RaisedButton
         label="Copy Campaign"
-        onTouchTap={async () =>
+        onClick={async () =>
           await this.props.mutations.copyCampaign(this.props.params.campaignId)
         }
       />
@@ -185,7 +185,7 @@ class AdminCampaignStats extends React.Component {
                     // edit
                     <RaisedButton
                       {...dataTest("editCampaign")}
-                      onTouchTap={() =>
+                      onClick={() =>
                         this.props.router.push(
                           `/admin/${organizationId}/campaigns/${campaignId}/edit`
                         )
@@ -198,7 +198,7 @@ class AdminCampaignStats extends React.Component {
                         // Buttons for Admins (and not Supervolunteers)
                         // export
                         <RaisedButton
-                          onTouchTap={async () => {
+                          onClick={async () => {
                             this.setState(
                               {
                                 exportMessageOpen: true,
@@ -220,7 +220,7 @@ class AdminCampaignStats extends React.Component {
                         />, // unarchive
                         campaign.isArchived ? (
                           <RaisedButton
-                            onTouchTap={async () =>
+                            onClick={async () =>
                               await this.props.mutations.unarchiveCampaign(
                                 campaignId
                               )
@@ -230,7 +230,7 @@ class AdminCampaignStats extends React.Component {
                         ) : null, // archive
                         !campaign.isArchived ? (
                           <RaisedButton
-                            onTouchTap={async () =>
+                            onClick={async () =>
                               await this.props.mutations.archiveCampaign(
                                 campaignId
                               )
@@ -241,7 +241,7 @@ class AdminCampaignStats extends React.Component {
                         <RaisedButton
                           {...dataTest("copyCampaign")}
                           label="Copy Campaign"
-                          onTouchTap={async () =>
+                          onClick={async () =>
                             await this.props.mutations.copyCampaign(
                               this.props.params.campaignId
                             )

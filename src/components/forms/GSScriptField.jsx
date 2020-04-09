@@ -26,13 +26,10 @@ export default class GSScriptField extends GSFormField {
   handleOpenDialog = event => {
     event.stopPropagation();
     event.preventDefault();
-    this.setState(
-      {
-        open: true,
-        script: this.props.value
-      },
-      () => this.refs.dialogScriptInput.focus()
-    );
+    this.setState({
+      open: true,
+      script: this.props.value
+    });
   };
 
   handleCloseDialog = () => {
@@ -59,12 +56,12 @@ export default class GSScriptField extends GSFormField {
           <FlatButton
             {...dataTest("scriptCancel")}
             label="Cancel"
-            onTouchTap={this.handleCloseDialog}
+            onClick={this.handleCloseDialog}
           />,
           <RaisedButton
             {...dataTest("scriptDone")}
             label="Done"
-            onTouchTap={this.handleSaveScript}
+            onClick={this.handleSaveScript}
             primary
           />
         ]}
@@ -92,7 +89,7 @@ export default class GSScriptField extends GSFormField {
           onFocus={event => {
             this.handleOpenDialog(event);
           }}
-          onTouchTap={event => {
+          onClick={event => {
             this.handleOpenDialog(event);
           }}
           floatingLabelText={this.floatingLabelText()}

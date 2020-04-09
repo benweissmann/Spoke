@@ -93,7 +93,7 @@ export class AdminScriptImport extends Component {
             label="Import"
             disabled={this.state.importingScript}
             primary
-            onTouchTap={this.startImport}
+            onClick={this.startImport}
           />
         </div>
       </div>
